@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "Auto ICS Calendar Importer",
+    "version": "1.0",
+    "applications": {
+        "gecko": {
+            "id": "auto-ics@prakaidao.dev"
+        }
+    },
+    "background": {
+        "scripts": [
+            "calendar-parser.js",
+            "background.js"
+        ]
+    },
+    "permissions": [
+        "accountsRead",
+        "messagesRead",
+        "messagesModify"
+    ],
+    "experiment_apis": {
+        "calendar": {
+            "schema": "experiments/calendar/schema.json",
+            "parent": {
+                "scopes": [
+                    "addon_parent"
+                ],
+                "script": "experiments/calendar/api.js"
+            }
+        }
+    }
+}
