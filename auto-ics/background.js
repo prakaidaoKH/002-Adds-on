@@ -44,17 +44,18 @@ browser.messages.onNewMailReceived.addListener(async (folder, messages) => {
                 console.error("❌ Error while parsing ICS:", err);
                 console.error("📄 Raw ICS that caused error:\n", calendarData);
             }
-            try {
-                console.log("📂 Listing calendars...");
-                let calendars = await browser.calendar.listCalendars();
-                console.log("📂 Calendars found:", calendars);
-            } catch (e) {
-                console.error("❌ Failed to list calendars:", e);
-            }
+            // try {
+            //     console.log("📂 Listing calendars...");
+            //     let calendars = await browser.calendar.listCalendars();
+            //     console.log("📂 Calendars found:", calendars);
+            // } catch (e) {
+            //     console.error("❌ Failed to list calendars:", e);
+            // }
 
-            if (event && target) {
+            if (event) {
+                console.log("Create event");
                 await browser.calendar.createEvent({
-                    calendarId: target.id,
+                    // calendarId: target.id,
                     title: event.summary,
                     start: event.start,
                     end: event.end,

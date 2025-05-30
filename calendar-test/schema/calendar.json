@@ -1,0 +1,77 @@
+[
+    {
+        "namespace": "calendar",
+        "description": "Access Thunderbird calendars",
+        "functions": [
+            {
+                "name": "listCalendars",
+                "type": "function",
+                "description": "List all calendars",
+                "async": true,
+                "parameters": [],
+                "returns": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "writable": {
+                                "type": "boolean"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "name": "createEvent",
+                "type": "function",
+                "description": "Create a new event",
+                "async": true,
+                "parameters": [
+                    {
+                        "name": "event",
+                        "type": "object",
+                        "properties": {
+                            "calendarId": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "start": {
+                                "type": "string"
+                            },
+                            "end": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "location": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "calendarId",
+                            "title",
+                            "start",
+                            "end"
+                        ]
+                    }
+                ],
+                "returns": {
+                    "type": "string",
+                    "description": "Confirmation message or event ID"
+                }
+            }
+        ]
+    }
+]
