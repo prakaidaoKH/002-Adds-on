@@ -17,23 +17,14 @@
                     "addon_parent"
                 ],
                 "script": "api/calendar.js",
-                "paths": [
-                    [
-                        "calendar",
-                        "listCalendars"
-                    ],
-                    [
-                        "calendar",
-                        "createEvent"
-                    ]
-                ]
+                "paths": [["calendar"]]
             }
         }
     },
     "applications": {
         "gecko": {
             "id": "calendar-logger@example.com",
-            "strict_min_version": "115.0"
+            "strict_min_version": "128.11.0"
         }
     }
 }

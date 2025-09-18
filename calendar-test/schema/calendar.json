@@ -3,33 +3,7 @@
         "namespace": "calendar",
         "description": "Access Thunderbird calendars",
         "functions": [
-            {
-                "name": "listCalendars",
-                "type": "function",
-                "description": "List all calendars",
-                "async": true,
-                "parameters": [],
-                "returns": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "string"
-                            },
-                            "name": {
-                                "type": "string"
-                            },
-                            "writable": {
-                                "type": "boolean"
-                            },
-                            "type": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            },
+            
             {
                 "name": "createEvent",
                 "type": "function",

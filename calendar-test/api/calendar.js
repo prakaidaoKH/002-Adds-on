@@ -6,15 +6,15 @@ this.calendar = class extends ExtensionAPI {
 
         return {
             calendar: {
-                async listCalendars() {
-                    console.log("📋 listCalendars called");
-                    return cal.manager.getCalendars({}).map(c => ({
-                        id: c.id,
-                        name: c.name,
-                        writable: !c.readOnly,
-                        type: c.type
-                    }));
-                },
+                // async listCalendars() {
+                //     console.log("📋 listCalendars called");
+                //     return cal.manager.getCalendars({}).map(c => ({
+                //         id: c.id,
+                //         name: c.name,
+                //         writable: !c.readOnly,
+                //         type: c.type
+                //     }));
+                // },
 
                 async createEvent(event) {
                     console.log("📣 createEvent called:", event);

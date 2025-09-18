@@ -1,0 +1,30 @@
+{
+  "namespace": "calendar",
+  "description": "Custom calendar API for creating events.",
+  "functions": [
+    {
+      "name": "createEvent",
+      "type": "function",
+      "description": "Create a new calendar event.",
+      "parameters": [
+        {
+          "name": "event",
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "startDate": { "type": "string" },
+            "endDate": { "type": "string" }
+          },
+          "required": ["title", "startDate", "endDate"]
+        }
+      ],
+      "returns": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean" },
+          "id": { "type": "string" }
+        }
+      }
+    }
+  ]
+}

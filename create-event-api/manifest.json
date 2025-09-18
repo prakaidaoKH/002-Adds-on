@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Create Event API",
+  "version": "1.0",
+  "description": "Manually create calendar events in Thunderbird",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "calendar"
+  ],
+  "browser_action": {
+    "default_title": "Create Test Event"
+  },
+  "applications": {
+    "gecko": {
+      "id": "create-event-api@example.com",
+      "strict_min_version": "128.0"
+    }
+  }
+}
