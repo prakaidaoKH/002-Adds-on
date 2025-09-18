@@ -1,43 +1,30 @@
-
-function onError(e) {
-  console.error(e);
-}
-
 async function createTestEvent() {
   try {
     let calendars = await browser.calendar.list();
-    if (!calendars.length) {
-      console.log("No calendars found. Please add a calendar to Thunderbird.");
-      return;
-    }
-
     let calendar = calendars.find(cal => !cal.readOnly);
+
     if (!calendar) {
       console.log("No writable calendars found.");
       return;
     }
 
-    console.log(`Found a writable calendar: "${calendar.name}" (ID: ${calendar.id})`);
+    console.log(`Found a writable calendar: "${calendar.name}"`);
 
     let eventDetails = {
       calendarId: calendar.id,
       title: "My Test Event from Add-on",
       start: new Date(),
-      end: new Date(Date.now() + (60 * 60 * 1000))
+      end: new Date(Date.now() + 3600000)
     };
 
     let createdEvent = await browser.calendar.createEvent(eventDetails);
-
-    console.log("Successfully created event!");
-    console.log("Event ID:", createdEvent.id);
-    console.log("Event Title:", createdEvent.title);
-    console.log("Start Time:", createdEvent.start);
+    console.log("SUCCESS: Created event with ID:", createdEvent.id);
 
   } catch (e) {
-    onError(e);
+    console.error("ERROR:", e);
   }
 }
 
 browser.browserAction.onClicked.addListener(createTestEvent);
 
-console.log("Create Event add-on loaded. Click the toolbar icon to create a test event.");
+console.log("Add-on loaded. Click toolbar icon or run createTestEvent() in console.");
